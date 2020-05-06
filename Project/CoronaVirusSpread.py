@@ -63,17 +63,27 @@ figA = go.Figure(data=go.Choropleth(
     colorbar_title="Confirmed Cases of Covid-19",
     zauto=False,
     zmin=0,
-    zmax=300000
+    zmax=150000
+
 ),
-    frames=[go.Frame(data=go.Choropleth(z=df3['March1'].astype(float), text="Week 1 of March")),
-            go.Frame(data=go.Choropleth(z=df3['March2'].astype(float), text="Week 2 of March")),
-            go.Frame(data=go.Choropleth(z=df3['March3'].astype(float), text="Week 3 of March")),
-            go.Frame(data=go.Choropleth(z=df3['March4'].astype(float), text="Week 4 of March")),
-            go.Frame(data=go.Choropleth(z=df3['April1'].astype(float), text="Week 1 of April")),
-            go.Frame(data=go.Choropleth(z=df3['April2'].astype(float), text="Week 2 of April")),
-            go.Frame(data=go.Choropleth(z=df3['April3'].astype(float), text="Week 3 of April")),
-            go.Frame(data=go.Choropleth(z=df3['April4'].astype(float), text="Week 4 of April")),
-            go.Frame(data=go.Choropleth(z=df3['May1'].astype(float), text="Week 1 of May")),
+    frames=[go.Frame(data=go.Choropleth(z=df3['March1'].astype(float)),
+                     layout=go.Layout(annotations=[go.layout.Annotation(text="1st Week of March", x=.5, y=1)])),
+            go.Frame(data=go.Choropleth(z=df3['March2'].astype(float)),
+                     layout=go.Layout(annotations=[go.layout.Annotation(text="2nd Week of March", x=.5, y=1)])),
+            go.Frame(data=go.Choropleth(z=df3['March3'].astype(float)),
+                     layout=go.Layout(annotations=[go.layout.Annotation(text="3rd Week of March", x=.5, y=1)])),
+            go.Frame(data=go.Choropleth(z=df3['March4'].astype(float)),
+                     layout=go.Layout(annotations=[go.layout.Annotation(text="4th Week of March", x=.5, y=1)])),
+            go.Frame(data=go.Choropleth(z=df3['April1'].astype(float)),
+                     layout=go.Layout(annotations=[go.layout.Annotation(text="1st Week of April", x=.5, y=1)])),
+            go.Frame(data=go.Choropleth(z=df3['April2'].astype(float)),
+                     layout=go.Layout(annotations=[go.layout.Annotation(text="2nd Week of April", x=.5, y=1)])),
+            go.Frame(data=go.Choropleth(z=df3['April3'].astype(float)),
+                     layout=go.Layout(annotations=[go.layout.Annotation(text="3rd Week of April", x=.5, y=1)])),
+            go.Frame(data=go.Choropleth(z=df3['April4'].astype(float)),
+                     layout=go.Layout(annotations=[go.layout.Annotation(text="4th Week of April", x=.5, y=1)])),
+            go.Frame(data=go.Choropleth(z=df3['May1'].astype(float)),
+                     layout=go.Layout(annotations=[go.layout.Annotation(text="1st Week of May", x=.5, y=1)])),
             ]
 
 )
@@ -85,6 +95,26 @@ figA.update_layout(
         buttons=[dict(label="Play",
                       method="animate",
                       args=[None])])],
+    annotations=[go.layout.Annotation(
+        showarrow=False,
+        text="1st Week of March",
+        x=.5,
+        y=1,
+        font=dict(
+            size=22
+        )
+    ),
+        go.layout.Annotation(
+            showarrow=False,
+            text="+",
+            x=1.0755,
+            y=.922,
+            font=dict(
+                size=11
+            )
+        )
+    ]
+
 )
 
 app.layout = html.Div(children=[
