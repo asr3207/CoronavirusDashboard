@@ -127,6 +127,13 @@ app.layout = html.Div(children=[
     html.H3('Web dashboard for Data Visualization using Python', style={'textAlign': 'center'}),
     html.H3('The state of Coronavirus COVID-19 Global Cases as of 4/19/2020', style={'textAlign': 'center'}),
     html.Br(),
+    html.Br(),
+    html.Hr(style={'color': '#7FDBFF'}),
+    html.H3('Animated Chart', style={'color': '#df1e56'}),
+    html.Div('This animated chart shows the number of cases updated once a week from March 1st to May 1st'),
+    dcc.Graph(id='graph6',
+              figure=figA
+              ),
     html.Br(), html.Hr(style={'color': '#7FDBFF'}),
     html.H3('Percentage of population infected', style={'color': '#df1e56'}),
     html.Div(
@@ -161,12 +168,6 @@ app.layout = html.Div(children=[
                       title='Cumulative number of cases in North Carolina per day 03/01/2020 - 04/18/2020',
                       xaxis_title="Date", yaxis_title="Number of Cases")
               }
-              ),
-    html.Hr(style={'color': '#7FDBFF'}),
-    html.H3('Animated Chart', style={'color': '#df1e56'}),
-    html.Div('This animated chart shows the number of cases updated once a week from March 1st to May 1st'),
-    dcc.Graph(id='graph6',
-              figure=figA
               ),
 ])
 
